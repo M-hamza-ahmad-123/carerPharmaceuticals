@@ -1,34 +1,45 @@
-import React from "react";
-import "tailwindcss/tailwind.css"; // Make sure to import Tailwind CSS
+import React, { useEffect, useState } from "react";
 
-const SunAnimation = () => {
+const SunriseAnimation = () => {
+  const [sunLeft, setSunLeft] = useState(-10); // Starting position of the sun
+  const [shineOpacity, setShineOpacity] = useState(0);
+  const [sloganRight, setSloganRight] = useState(0); // Starting position of the slogan
+
+  useEffect(() => {
+    const sunAnimation = setInterval(() => {
+      if (sunLeft < 20) {
+        setSunLeft(sunLeft + 0.2);
+        if (sunLeft >= 0) {
+          setShineOpacity(0.4);
+        }
+      } else {
+        clearInterval(sunAnimation);
+      }
+    }, 50);
+
+    setTimeout(() => {
+      setSloganRight(0);
+    }, 3000);
+  }, []);
+
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Content div */}
-      <div className="h-full w-full bg-blue-500 text-white transition-all duration-500">
-        {/* Your existing content goes here */}
-        <header className="text-center py-8">
-          <h1 className="text-4xl font-bold">Your Company Name</h1>
-          {/* Other header content */}
-        </header>
-        {/* Navbar */}
-        <nav className="bg-gray-800 p-4 text-white">
-          {/* Your navbar content */}
-        </nav>
-        {/* Remaining content */}
-        <div className="p-8">{/* Remaining content of your page */}</div>
-      </div>
-
-      {/* Sun animation */}
-      <div className="absolute left-0 top-1/4 transform -translate-x-full">
-        <div className="animate-fadeInLeft animate-spin duration-3">
-          {/* Your sun and shine elements */}
-          <div className="w-16 h-16 bg-yellow-500 rounded-full"></div>
-          <div className="w-4 h-4 bg-yellow-200 rounded-full mt-2 ml-2"></div>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-300 to-blue-600 relative">
+      <div
+        className="w-24 h-24 bg-yellow-400 rounded-full absolute -left-6 transition-all ease-in-out duration-300"
+        style={{ left: `${sunLeft}%` }}
+      ></div>
+      <div
+        className="w-full h-full bg-yellow-400 opacity-0 absolute transition-opacity ease-in-out duration-300"
+        style={{ opacity: shineOpacity }}
+      ></div>
+      <div
+        className="text-4xl font-bold text-white absolute right-4"
+        style={{ right: `${sloganRight}%` }}
+      >
+        We Cure the Best Diseases
       </div>
     </div>
   );
 };
 
-export default SunAnimation;
+export default SunriseAnimation;

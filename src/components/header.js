@@ -1,30 +1,58 @@
-import React from "react";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import AdbIcon from "@mui/icons-material/Adb";
 
-export function Header() {
+// Define a CSS class
+const buttonStyles = {
+  my: 2,
+  color: "white",
+  display: "block",
+};
+
+function Header() {
   return (
-    <div>
-      <div className="bg-white border-gray-200 dark:bg-gray-900">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-          <div className="flex items-center">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Drug Dealer
-            </span>
-          </div>
+    <AppBar position="static" sx={{ backgroundColor: "#333333" }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <AdbIcon sx={{ display: { xs: "block", md: "flex" }, mr: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: "block", md: "flex" }, // Show on both xs and md screens
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            Drug Dealer
+          </Typography>
 
-          <div className="flex items-center mt-5">
-            <a className="mr-6 text-sm text-gray-500 dark:text-white hover:underline">
-              Location
-            </a>
-            <a className="mr-6 text-sm text-gray-500 dark:text-white hover:underline">
-              03024444338
-            </a>
-            <a className="mr-6 text-sm text-gray-500 dark:text-white hover:underline">
-              hamzathegreat1234@gmail.com
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              marginLeft: "auto",
+            }}
+          >
+            {/* Apply the CSS class to the buttons */}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Location</Button>
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Email</Button>
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Number</Button>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
 

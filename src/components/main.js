@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Header from "./header";
-import SunAnimation from "../utils/SunAnimation";
+import Products from "./products/products";
+import { useParams } from "react-router-dom";
+import Home from "./home/Home";
+import Services from "./Services";
+
 function Main() {
+  const [selectedPage, setSelectedPage] = useState();
+  const params = useParams();
+  const { page } = params;
+
+  useEffect(() => {
+    console.log(page);
+    if (page === "products") {
+      setSelectedPage(<Products />);
+    } else if (page === "services") {
+      setSelectedPage(<Services />);
+    } else {
+      setSelectedPage(<Home />);
+    }
+  }, [page]);
+
   return (
-    <div className="flex flex-col">
+    <div>
       <Header></Header>
       <Navbar></Navbar>
+      {selectedPage ? selectedPage : null}
     </div>
   );
 }

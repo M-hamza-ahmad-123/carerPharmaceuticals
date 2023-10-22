@@ -1,27 +1,54 @@
-import React from "react";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import { Link } from "react-router-dom";
+
+// Define a CSS class for the buttons
+const buttonStyles = {
+  my: 2,
+  color: "black",
+  display: "block",
+  transition: "background 0.3s",
+  "&:hover": {
+    backgroundColor: "#555555",
+    color: "#fff",
+  },
+};
 
 function Navbar() {
   return (
-    <div div className="bg-gray-50 dark:bg-gray-700">
-      <div className="max-w-screen-xl px-4 py-3 mx-auto">
-        <div className="flex items-center">
-          <div className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm order-last">
-            <button className="text-gray-900 dark:text-white hover:underline">
-              Home
-            </button>
-            <button className="text-gray-900 dark:text-white hover:underline">
-              Company
-            </button>
-            <button className="text-gray-900 dark:text-white hover:underline">
-              Team
-            </button>
-            <button className="text-gray-900 dark:text-white hover:underline">
-              Features
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Link to="/home">
+            {" "}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Home</Button>
+          </Link>
+          <Link to="/services">
+            {" "}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Services</Button>
+          </Link>
+          <Link to="/products">
+            {" "}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Products</Button>
+          </Link>
+          {/* <Button sx={{ ...buttonStyles, mx: 1 }}>
+            Sabar kar bhai abhi aur ane hain
+          </Button> */}
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
 
