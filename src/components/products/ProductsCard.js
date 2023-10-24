@@ -16,7 +16,6 @@ const Card = styled.div`
   overflow: hidden;
   width: 100%;
   max-width: 350px;
-  margin: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
   cursor: pointer;
@@ -36,8 +35,6 @@ const Image = styled.img`
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  border-radius: 10px;
-  margin: 12px;
 `;
 
 const Title = styled.h3`

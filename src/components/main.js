@@ -4,6 +4,7 @@ import Header from "./header";
 import Products from "./products/products";
 import { useParams } from "react-router-dom";
 import Home from "./home/Home";
+import Footer from "./Footer";
 import Services from "./Services";
 
 function Main() {
@@ -27,6 +28,8 @@ function Main() {
       <Header></Header>
       <Navbar></Navbar>
       {selectedPage ? selectedPage : null}
+
+      <Footer></Footer>
     </div>
   );
 }
