@@ -25,9 +25,7 @@ const ProductCardWrapper = styled.div`
 const generateRandomProducts = () => {
   const products = [];
   for (let i = 1; i <= 25; i++) {
-    const randomImageWidth = 300;
-    const randomImageHeight = 200;
-    const randomImageNumber = Math.floor(Math.random() * 10) + 1;
+
     const imageUrl = `https://source.unsplash.com/random/800x800/?img=${i}`;
     products.push({
       name: `Product ${i}`,
@@ -40,13 +38,13 @@ const generateRandomProducts = () => {
 
 const products = generateRandomProducts();
 
-const Products = () => {
+const Products = ({setSelectedPage}) => {
   return (
     <div className="bg-slate-200">
       <ProductGrid>
         {products.map((product, index) => (
           <ProductCardWrapper key={index}>
-            <ProductCard product={product} />
+            <ProductCard product={product} setSelectedPage={setSelectedPage} />
           </ProductCardWrapper>
         ))}
       </ProductGrid>

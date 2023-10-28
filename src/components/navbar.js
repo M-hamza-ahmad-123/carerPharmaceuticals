@@ -43,6 +43,10 @@ function Navbar() {
             {" "}
             <Button sx={{ ...buttonStyles, mx: 1 }}>Products</Button>
           </Link>
+          <Link to="/contactform  ">
+            {" "}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Contact us</Button>
+          </Link>
           {/* <Button sx={{ ...buttonStyles, mx: 1 }}>
             Sabar kar bhai abhi aur ane hain
           </Button> */}

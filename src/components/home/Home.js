@@ -1,11 +1,14 @@
 import React from "react";
 import { SunriseAnimation } from "../../utils/SunAnimation";
 import WovenImageList from "../WovenImageList";
+import AboutUs from "../AboutUs";
+import { Divider } from "@mui/material";
+import Features from "../Features";
 
 function Home() {
   const divStyle = {
     width: "100%", // Make the div full width
-    height: "100vh", // Make the div full height of the viewport
+    height: "70vh", // Make the div full height of the viewport
     backgroundColor: "lightsteelblue", // Light slate background color
   };
 
@@ -13,9 +16,13 @@ function Home() {
     <>
       <div style={divStyle}>
         {/* <SunriseAnimation></SunriseAnimation> */}
-        Hamza The Great
+Animation
       </div>
+      <Features></Features>
       <WovenImageList></WovenImageList>
+      <AboutUs></AboutUs>
+
+
     </>
   );
 }
