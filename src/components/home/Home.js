@@ -1,5 +1,5 @@
 import React from "react";
-import { SunriseAnimation } from "../../utils/SunAnimation";
+import SunAnimation from "../../utils/SunAnimation";
 import WovenImageList from "../WovenImageList";
 import AboutUs from "../AboutUs";
 import { Divider } from "@mui/material";
@@ -9,14 +9,13 @@ function Home() {
   const divStyle = {
     width: "100%", // Make the div full width
     height: "70vh", // Make the div full height of the viewport
-    backgroundColor: "lightsteelblue", // Light slate background color
+    backgroundColor: "gray", // Light slate background color
   };
 
   return (
     <>
       <div style={divStyle}>
-        {/* <SunriseAnimation></SunriseAnimation> */}
-Animation
+      <SunAnimation></SunAnimation>
       </div>
       <Features></Features>
       <WovenImageList></WovenImageList>

@@ -20,8 +20,9 @@ const buttonStyles = {
 function Navbar() {
   return (
     <AppBar
-      position="static"
-      sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+    position="static"
+
+     sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
     >
       <Container maxWidth="xl">
         <Toolbar
