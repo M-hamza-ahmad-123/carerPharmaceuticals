@@ -41,7 +41,7 @@ const {id}=params
   // }, [id]);
 
   return (
-    <div className="  flex flex-col bg-slate-100">
+    <div className=" bg-slate-100">
       <Header></Header>
       <Navbar></Navbar>
       {selectedPage ? selectedPage : null}
