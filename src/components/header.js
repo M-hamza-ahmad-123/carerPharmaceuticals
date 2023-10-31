@@ -10,13 +10,13 @@ import AdbIcon from "@mui/icons-material/Adb";
 // Define a CSS class
 const buttonStyles = {
   my: 2,
-  color: "white",
+  color: "black",
   display: "block",
 };
 
 function Header() {
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#333333" }}>
+    <AppBar position="static" sx={{ backgroundColor: "teal" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "block", md: "flex" }, mr: 1 }} />
@@ -30,11 +30,11 @@ function Header() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "black ",
               textDecoration: "none",
             }}
           >
-            Drug Dealer
+Carer Pharma
           </Typography>
 
           <Box
