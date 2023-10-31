@@ -20,8 +20,9 @@ const buttonStyles = {
 function Navbar() {
   return (
     <AppBar
-      position="static"
-      sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+    position="static"
+
+     sx={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
     >
       <Container maxWidth="xl">
         <Toolbar
@@ -43,8 +44,9 @@ function Navbar() {
             {" "}
             <Button sx={{ ...buttonStyles, mx: 1 }}>Products</Button>
           </Link>
-          <Link to="/Contact">
-            <Button sx={{ ...buttonStyles, mx: 1 }}>Contact</Button>
+          <Link to="/contactform  ">
+            {" "}
+            <Button sx={{ ...buttonStyles, mx: 1 }}>Contact us</Button>
           </Link>
           {/* <Button sx={{ ...buttonStyles, mx: 1 }}>
             Sabar kar bhai abhi aur ane hain
